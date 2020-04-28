@@ -48,11 +48,11 @@
 	<!--
 		Template Colors
 	-->
-	<link rel="stylesheet" href="css/template-colors/green.css" />
-	<!--<link rel="stylesheet" href="css/template-colors/blue.css" />-->
+	<!--<link rel="stylesheet" href="css/template-colors/green.css" />-->
+	<link rel="stylesheet" href="css/template-colors/blue.css" />
 	<!--<link rel="stylesheet" href="css/template-colors/orange.css" />-->
 	<!--<link rel="stylesheet" href="css/template-colors/pink.css" />-->
-	<!--<link rel="stylesheet" href="css/template-colors/purple.css" />-->
+	<!--<link rel="stylesheet" href="css/template-colors/purple.css" />
 	<!--<link rel="stylesheet" href="css/template-colors/red.css" />-->
 
 	<!--
@@ -629,6 +629,13 @@
 		Main Scripts
 	-->
 	<script src="js/scripts.js"></script>
+
+	<script>
+		(function (w, d, u) {
+			var s = d.createElement('script'); s.async = true; s.src = u + '?' + (Date.now() / 60000 | 0);
+			var h = d.getElementsByTagName('script')[0]; h.parentNode.insertBefore(s, h);
+		})(window, document, 'https://cdn-ru.bitrix24.ru/bedrosovar/crm/site_button/loader_4_v4hrph.js');
+	</script>
 	
 </body>
 </html>

@@ -26,12 +26,23 @@ jobs:
     - name: Run a one-line script
       run: echo Hello, world!
  
-    - name: AWS S3 Sync
-      uses: opspresso/action-s3-sync@v0.2.3
-      env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: "us-east-1"
-          FROM_PATH: "./S3"
-          DEST_PATH: "s3://yuliya-bedrosova.ru/"
-          OPTIONS: "--acl public-read"
+    #- name: AWS S3 Sync
+    #  uses: opspresso/action-s3-sync@v0.2.3
+    #  env:
+    #      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+    #      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    #      AWS_REGION: "us-east-1"
+    #      FROM_PATH: "./S3"
+    #      DEST_PATH: "s3://yuliya-bedrosova.ru/"
+    #      OPTIONS: "--acl public-read"
+          
+    - name: S3 Sync
+      uses: jakejarvis/s3-sync-action@v0.5.1
+      env: 
+        AWS_S3_BUCKET: 'yuliya-bedrosova.ru'
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_REGION: 'us-east-1'   # optional: defaults to us-east-1
+        SOURCE_DIR: 'S3'      # optional: defaults to entire repository
+          
+    

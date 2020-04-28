@@ -32,6 +32,6 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AKIASFKAZUVFONTEEHNL }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AKIASFKAZUVFONTEEHNL }}
           AWS_REGION: "us-east-1"
-          FROM_PATH: "./target/publish"
+          FROM_PATH: "."
           DEST_PATH: "s3://yuliya-bedrosova.ru/"
           OPTIONS: "--acl public-read"
